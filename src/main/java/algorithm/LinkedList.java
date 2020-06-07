@@ -1,5 +1,8 @@
 package algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LinkedList {
     // 头节点指针
     private Node head;
@@ -36,8 +39,9 @@ public class LinkedList {
             insertedNode.next = head;
             head = insertedNode;
         } else if (size == index ) {
-            Node node = get(index - 1);
-            node.next = insertedNode;
+//            Node node = get(index - 1);
+//            node.next = insertedNode;
+            last.next = insertedNode;
             last = insertedNode;
         } else {
             // 插入中间

@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.HashMap;
+
 public class Array {
 
     private int[] array;
@@ -46,18 +48,23 @@ public class Array {
     }
 
     public static void main(String[] args) throws Exception {
-        Array array = new Array(6);
-        array.enQueue(3);
-        array.enQueue(5);
-        array.enQueue(6);
-        array.enQueue(8);
-        array.enQueue(1);
-        array.deQueue();
-        array.deQueue();
-        array.deQueue();
-        array.enQueue(2);
-        array.enQueue(4);
-        array.enQueue(9);
-        array.outPut();
+//        Array array = new Array(6);
+//        array.enQueue(3);
+//        array.enQueue(5);
+//        array.enQueue(6);
+//        array.enQueue(8);
+//        array.enQueue(1);
+//        array.deQueue();
+//        array.deQueue();
+//        array.deQueue();
+//        array.enQueue(2);
+//        array.enQueue(4);
+//        array.enQueue(9);
+//        array.outPut();
+        HashMap abc = new HashMap(15);
+        abc.put(1, 1);
+        System.out.println(Math.random());
+        int k = (int) (Math.random() * 35);
+        System.out.println(k);
     }
 }
