@@ -2,6 +2,8 @@ package algorithm;
 
 import sun.reflect.generics.tree.Tree;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
 public class TreesetTest {
@@ -13,6 +15,10 @@ public class TreesetTest {
 //        User user = new User("1");
 //        objects.add(user);
         new User();
+        List<String> test = new ArrayList<>();
+        test.add("test");
+        test.add(0, "test1");
+
     }
 }
 
