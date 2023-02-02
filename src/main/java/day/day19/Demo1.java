@@ -1,5 +1,6 @@
 package day.day19;
 
+/** 删除k个数后最小的数 */
 public class Demo1 {
 
     public static void main(String[] args) {

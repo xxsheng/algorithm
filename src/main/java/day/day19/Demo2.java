@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+/** 全排列 */
 public class Demo2 {
 
     public static void main(String[] args) {
