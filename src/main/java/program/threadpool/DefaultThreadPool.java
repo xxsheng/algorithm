@@ -58,15 +58,33 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 
     @Override
     public void addWorker(int num) {
+        synchronized (jobs) {
+            if (num + this.workedNUm > MAX_POOL_SIZE) {
+                num = MAX_POOL_SIZE - this.workedNUm;
+            }
 
-        initWork(num);
+            initWork(num);
+            this.workedNUm += num;
+        }
     }
 
     @Override
     public void removeWorker(int num) {
-        for (int i = 0; i < num; i++) {
-            Worker worker = workers.get(i);
-            worker.shutDown();
+        synchronized (jobs) {
+            if (num < 0) {
+                throw new IllegalArgumentException("非法的参数");
+            }
+            if (num > this.workedNUm - MIN_POOL_SIZE) {
+                num = this.workedNUm - MIN_POOL_SIZE;
+            }
+            int count = 0;
+            while (count < num) {
+
+                Worker remove = workers.remove(0);
+                remove.shutDown();
+                count++;
+            }
+            this.workedNUm -= count;
         }
     }
 
